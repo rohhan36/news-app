@@ -19,7 +19,7 @@ export const UserMenu = () => {
 
   return (
     <div className="flex flex-row items-center sm:gap-5 gap-2">
-      <div className="flex  bg-fuchsia-100 rounded-full h-8 justify-around drop-shadow relative">
+      <div className=" hidden sm:flex bg-fuchsia-100 rounded-full h-8 justify-around drop-shadow relative ">
         <div
           className={`w-8 h-8 bg-fuchsia-950 rounded-full absolute transition-all duration-300 left-0
           ${isGridView && "translate-x-8"} 

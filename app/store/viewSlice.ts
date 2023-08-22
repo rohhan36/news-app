@@ -7,7 +7,6 @@ const viewSlice = createSlice({
   initialState: initialViewState,
   reducers: {
     toogleView(state, action) {
-      console.log("from store", action.payload);
       state.isGridView = action.payload;
     },
   },

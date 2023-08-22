@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { UserMenu } from "./UserMenu";
