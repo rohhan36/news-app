@@ -9,7 +9,7 @@ const NavLinks = () => {
   const queryCategory = searchParams.get("category");
 
   return (
-    <nav className="sm:w-60 w-30 h-[100vh] navlink flex flex-col p-4 gap-5 pt-20">
+    <nav className="sm:w-60 w-30 h-[100vh] navlink flex flex-col p-4 gap-5 pt-20 mt-5">
       {CATEGORIES.map((category) => (
         <NavLink category={category} key={category} isActive={queryCategory === category} />
       ))}
