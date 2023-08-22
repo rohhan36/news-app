@@ -1,15 +1,11 @@
-"use client";
-
-import { Bars3Icon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { UserMenu } from "./UserMenu";
-import { Anton, Braah_One, Russo_One } from "next/font/google";
 
 const Header = () => {
   return (
-    <div className="flex flex-row gap-2 sm:p-8 px-3 py-5 w-full items-center justify-between">
-      <Link href="/" className="font-bold text-2xl text-fuchsia-950">
+    <div className="flex flex-row gap-2 sm:px-8 px-3 py-5 w-full items-center justify-between shadow bg-white fixed z-10">
+      <Link href="/" className="font-bold sm:text-2xl text-xl sm:block hidden text-fuchsia-950 ">
         Daily Bugel
       </Link>
       <SearchBar />

@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import Header from "./components/Header/Header";
+import NavLinks from "./components/Sidebar/NavLinks";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={raleway.className}>
         <Header />
-        {children}
+        <div className="flex flex-row">
+          <NavLinks />
+          {children}
+        </div>
       </body>
     </html>
   );

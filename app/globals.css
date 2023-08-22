@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navlink {
+  background-color: #f7f6f9;
+}
