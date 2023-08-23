@@ -12,7 +12,7 @@ const SearchBar = () => {
     e.preventDefault();
     if (!input) return;
 
-    router.push(`/search?q=${input}`);
+    router.push(`/?q=${input}`);
 
     setInput("");
   };

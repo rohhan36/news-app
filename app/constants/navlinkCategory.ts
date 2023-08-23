@@ -1,5 +1,4 @@
 const CATEGORIES: string[] = [
-  "all",
   "business",
   "entertainment",
   "gaming",
