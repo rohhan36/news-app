@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={raleway.className}>
         <Header />
-        <div className="flex flex-row">
+        <div className="flex flex-row items-start">
           <NavLinks />
           {children}
         </div>
