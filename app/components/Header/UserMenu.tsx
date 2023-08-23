@@ -4,17 +4,26 @@ import { ListBulletIcon, Squares2X2Icon } from "@heroicons/react/24/solid";
 
 import { useSelector, useDispatch } from "react-redux";
 import { viewActions } from "@/app/store/viewSlice";
+import { userMenuActions } from "@/app/store/userMenuSlice";
+
+import UserOptions from "./UserOptions";
 
 export const UserMenu = () => {
   const isGridView = useSelector((state: RootState) => state.view.isGridView);
-  const viewDispatch = useDispatch();
+  const isUserMenuOpen = useSelector((state: RootState) => state.userMenu.isUserMenuOpen);
+  const user = useSelector((state: RootState) => state.auth.user);
+  const dispatch = useDispatch();
+
+  const userMenuClickHandler = () => {
+    dispatch(userMenuActions.toogleUserMenu());
+  };
 
   const viewToggleHandler = (isGrid: boolean) => {
     if (isGrid) {
-      viewDispatch(viewActions.toogleView(true));
+      dispatch(viewActions.toogleView(true));
       return;
     }
-    viewDispatch(viewActions.toogleView(false));
+    dispatch(viewActions.toogleView(false));
   };
 
   return (
@@ -47,9 +56,12 @@ export const UserMenu = () => {
           />
         </button>
       </div>
-      <button>
-        <Bars3Icon className="h-8 w-8 cursor-pointer fill-fuchsia-950" />
-      </button>
+      <div className="relative">
+        <button onClick={userMenuClickHandler}>
+          <Bars3Icon className="h-8 w-8 cursor-pointer fill-fuchsia-950" />
+        </button>
+        {isUserMenuOpen && <UserOptions isLoggedIn={user !== null} />}
+      </div>
     </div>
   );
 };
