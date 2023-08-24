@@ -1,10 +1,11 @@
 "use client";
 
 import { Article } from "../../typings";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import DateBlock from "../UI/DateBlock";
 import { useRouter } from "next/navigation";
+import { articleActions } from "@/app/store/articleSlice";
 
 interface NewsArticleItemProps {
   articleData: Article;
@@ -15,19 +16,18 @@ const NewsArticleItem: React.FC<NewsArticleItemProps> = ({ articleData }) => {
   const isGridView = useSelector((state: RootState) => state.view.isGridView);
   const router = useRouter();
 
+  const dispatch = useDispatch();
+
   const generateURL = (articleData: Article) => {
     let URL = "/article?";
-
-    console.log(articleData.source.name);
-    for (let key in articleData) {
-      URL += `${key}=${articleData[key] || ""}&`;
-    }
+    URL += `src=${articleData.url}`;
 
     return URL;
   };
 
   const clickHandler = () => {
     const URL = generateURL(articleData);
+    dispatch(articleActions.setCurrentArticle(articleData));
     router.push(URL);
   };
 

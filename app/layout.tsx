@@ -7,7 +7,11 @@ import Header from "./components/Header/Header";
 import NavLinks from "./components/Sidebar/NavLinks";
 import { Provider } from "react-redux";
 import store from "@/app/store/index";
+import LoginModal from "./components/Modals/LoginModal";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 
+let persistor = persistStore(store);
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,11 +24,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={raleway.className}>
         <Provider store={store}>
-          <Header />
-          <div className="flex flex-row items-start">
-            <NavLinks />
-            {children}
-          </div>
+          <PersistGate persistor={persistor}>
+            <LoginModal />
+            <Header />
+            <div className="flex flex-row items-start">
+              <NavLinks />
+              {children}
+            </div>
+          </PersistGate>
         </Provider>
       </body>
     </html>

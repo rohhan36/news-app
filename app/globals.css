@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.navlink {
+.navlink,
+.input {
   background-color: #f7f6f9;
 }
