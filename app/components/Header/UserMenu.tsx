@@ -11,7 +11,6 @@ import UserOptions from "./UserOptions";
 export const UserMenu = () => {
   const isGridView = useSelector((state: RootState) => state.view.isGridView);
   const isUserMenuOpen = useSelector((state: RootState) => state.userMenu.isUserMenuOpen);
-  const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
 
   const userMenuClickHandler = () => {
@@ -60,7 +59,7 @@ export const UserMenu = () => {
         <button onClick={userMenuClickHandler}>
           <Bars3Icon className="h-8 w-8 cursor-pointer fill-fuchsia-950" />
         </button>
-        {isUserMenuOpen && <UserOptions isLoggedIn={user !== null} />}
+        {isUserMenuOpen && <UserOptions />}
       </div>
     </div>
   );

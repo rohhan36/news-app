@@ -10,6 +10,7 @@ import store from "@/app/store/index";
 import LoginModal from "./components/Modals/LoginModal";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import TosterProvider from "./components/Providers/ToastProvider";
 
 let persistor = persistStore(store);
 const raleway = Raleway({ subsets: ["latin"] });
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={raleway.className}>
         <Provider store={store}>
           <PersistGate persistor={persistor}>
+            <TosterProvider />
             <LoginModal />
             <Header />
             <div className="flex flex-row items-start">

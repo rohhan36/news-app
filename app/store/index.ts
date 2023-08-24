@@ -1,7 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import viewSlice from "./viewSlice";
 import userMenuSlice from "./userMenuSlice";
-import authSlice from "./authSlice";
 import logInSlice from "./logInSlice";
 import signUpSlice from "./signUpSlice";
 import articleeSlice from "./articleSlice";
@@ -16,7 +15,6 @@ const persistConfig = {
 const reducers = combineReducers({
   view: viewSlice.reducer,
   userMenu: userMenuSlice.reducer,
-  auth: authSlice.reducer,
   logInModal: logInSlice.reducer,
   signUpModal: signUpSlice.reducer,
   article: articleeSlice.reducer,

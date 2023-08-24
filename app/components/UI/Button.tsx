@@ -1,10 +1,10 @@
-import { type } from "os";
+import { FormEvent } from "react";
 
 interface ButtonProps {
   label: string;
   isPrimary?: boolean;
   type: "button" | "submit" | "reset" | undefined;
-  onClick: (e: React.FormEvent) => void;
+  onClick: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ label, isPrimary, type, onClick }) => {

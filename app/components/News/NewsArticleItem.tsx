@@ -34,7 +34,7 @@ const NewsArticleItem: React.FC<NewsArticleItemProps> = ({ articleData }) => {
   return (
     <div
       onClick={clickHandler}
-      className={`p-4 shadow-lg rounded-lg flex flex-col gap-4 hover:scale-[1.02] transition-all duration-200 cursor-pointer relative 
+      className={`p-4 shadow-lg rounded-lg flex flex-col gap-4 hover:scale-[1.02] hover:bg-fuchsia-50/80 transition-all duration-200 cursor-pointer relative 
       ${!urlToImage && "pt-20"}`}>
       <DateBlock date={publishedAt} />
       {urlToImage && (
