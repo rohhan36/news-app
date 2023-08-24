@@ -6,7 +6,6 @@ export interface IQueryParams {
 const getNews = async (params: IQueryParams) => {
   const { q, category } = params;
   let res: Response;
-
   if (category) {
     res = await fetch(
       `https://newsapi.org/v2/top-headlines?${q}&${
