@@ -11,10 +11,12 @@ import { toast } from "react-hot-toast";
 import { userMenuActions } from "@/app/store/userMenuSlice";
 import getUserData from "@/app/lib/getUserData";
 import createNewUser from "@/app/lib/createNewUser";
+import { useRouter } from "next/navigation";
 
 const LoginModal = () => {
   const dispatch = useDispatch();
   const isLogInModalOpen = useSelector((state: RootState) => state.logInModal.isLogInModalOpen);
+  const router = useRouter();
 
   const googleProvider = new GoogleAuthProvider();
   const googleLogin = async () => {
@@ -35,7 +37,7 @@ const LoginModal = () => {
         toast.success("Logged in successfully");
       }
 
-      console.log(userData);
+      router.refresh();
       dispatch(logInModalActions.closeLogInModal());
       dispatch(userMenuActions.toogleUserMenu());
     } catch (error) {

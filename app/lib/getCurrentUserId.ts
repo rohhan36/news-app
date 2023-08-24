@@ -1,11 +1,11 @@
-const getUserData = async (uid: string) => {
+const getCurrentUserId = async (uid: string) => {
   try {
     const res = await fetch("https://news-app-3ce7c-default-rtdb.firebaseio.com/user.json");
     const users = await res.json();
 
-    for (let user in users) {
-      if (users[user].uid === uid) {
-        return users[user].favorites;
+    for (let userID in users) {
+      if (users[userID].uid === uid) {
+        return userID;
       }
     }
   } catch (error) {
@@ -15,4 +15,4 @@ const getUserData = async (uid: string) => {
   return null;
 };
 
-export default getUserData;
+export default getCurrentUserId;

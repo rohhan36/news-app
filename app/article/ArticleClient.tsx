@@ -2,6 +2,7 @@
 
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
+import HeartButton from "../components/UI/HeartButton";
 const ArticleClient = () => {
   const articleData = useSelector((state: RootState) => state.article.currentArticle);
   const { source, author, content, description, title, url, urlToImage } = articleData;
@@ -9,6 +10,7 @@ const ArticleClient = () => {
   return (
     <div className="flex flex-col gap-5 max-w-4xl">
       {urlToImage && <img src={urlToImage} alt={title} className="h-96 object-contain" />}
+      <HeartButton />
       <div className="font-bold text-fuchsia-950 text-2xl">{title}</div>
       {"author" && <div className="font-bold text-fuchsia-950">Author : {author}</div>}
       {source.name && <div className="font-bold text-fuchsia-950">Source : {source.name}</div>}

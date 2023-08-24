@@ -19,3 +19,8 @@ export type Article = {
   publishedAt: string;
   content: string;
 };
+
+export type ArticleData = {
+  url: string;
+  article: Article;
+};

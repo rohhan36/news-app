@@ -6,6 +6,7 @@ const createNewUser = async (user: User) => {
     body: JSON.stringify({
       uid: user.uid,
       email: user.email,
+      favorites: ["head"],
     }),
     headers: {
       "Content-type": "application/json",
