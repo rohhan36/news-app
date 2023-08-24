@@ -1,6 +1,6 @@
 "use client";
 
-import { Article } from "@/app/typings";
+import { Article, ArticleData } from "@/app/typings";
 import NewsArticleItem from "./NewsArticleItem";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store";

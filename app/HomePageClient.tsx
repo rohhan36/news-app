@@ -3,6 +3,7 @@
 import React from "react";
 import NewsContainer from "./components/News/NewsContainer";
 import { Article } from "./typings";
+import EmptyState from "./components/EmptyState";
 
 interface HomePageClientProps {
   articles: Article[];
