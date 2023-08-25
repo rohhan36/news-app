@@ -55,3 +55,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 7. News API | https://newsapi.org/
 8. React Hot Toast (Light weight notification provider)
 9. React Icons / React Spinners
+10. Vercel for deployment
