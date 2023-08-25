@@ -1,4 +1,5 @@
 import { User } from "firebase/auth";
+import dummyData from "../constants/dummyData";
 
 const createNewUser = async (user: User) => {
   const res = await fetch("https://news-app-3ce7c-default-rtdb.firebaseio.com/user.json", {
@@ -6,7 +7,7 @@ const createNewUser = async (user: User) => {
     body: JSON.stringify({
       uid: user.uid,
       email: user.email,
-      favorites: ["head"],
+      favorites: [dummyData],
     }),
     headers: {
       "Content-type": "application/json",

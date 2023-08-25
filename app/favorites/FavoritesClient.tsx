@@ -26,7 +26,7 @@ const FavoritesClient: React.FC<FavoritesClientProps> = ({ favorites }) => {
     `}>
       {favorites.map(
         (favorite) =>
-          favorite !== "head" && (
+          favorite.url !== "head" && (
             <NewsArticleItem articleData={favorite.article} key={Math.random()} />
           )
       )}

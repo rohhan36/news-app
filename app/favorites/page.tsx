@@ -19,7 +19,7 @@ const FavoritesPage = () => {
       setFavorites(favoriteArticles);
     };
     getFavorites();
-  }, [currentUser, favorites]);
+  }, [currentUser]);
 
   if (!currentUser) {
     return <EmptyState title="Unauthorised" subtitle="You are not allowed to access this page" />;
